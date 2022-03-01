@@ -22,14 +22,13 @@ void main()
 	filtro = 3;
 	printf("Digitare la dimensione dell'img: ");
 	scanf("%d", &img);
-	printf("Digitare il numero di canali:");
-	scanf("%d", &n_canali);
+        n_canali=4;
 
 	
 	printf("%d,%d,%d", img, n_canali, filtro);
-	// modalit‡ con 22 pesi diversi da 0
+	// modalit√† con 22 pesi diversi da 0
 	fprintf(fp, ".data \n channel_size: .word 6,5,6,5 \n weightS: .word 3,2,7,4,5,6, 7,8,2,7,6, 1,2,3,4,5,6, 5,6,2,8,6 \n Px: .word 0,1,2,1,2,0, 1,2,1,2,0, 1,2,1,2,0,1, 2,1,2,0,1 \n Py: .word 0,1,2,1,2,0, 1,2,2,2,0, 1,2,1,2,0,1, 2,1,2,0,1 \n");
-    //modalit‡ con 10 pesi diversi da 0
+    //modalit√† con 10 pesi diversi da 0
 	//fprintf(fp, ".data \n channel_size: .word 3,2,3,2 \n weightS:.word 3,2,7,4,5,6,7,8,2,7 \n Px: .word 0,1,2,1,2,0,1,2,1,2 \n Py: .word  0,1,2,2,2,2,0,0, 2,0 \n");
 
 	for (int canale = 0; canale < n_canali; canale++) {
